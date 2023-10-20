@@ -14,7 +14,7 @@ class CursoRepository {
         $this->model = $model;
     }
 
-    public function buscacurso($id)
+    public function buscarcurso($id)
     {
         return $this->model->with('instrutor')->find($id);
     }
