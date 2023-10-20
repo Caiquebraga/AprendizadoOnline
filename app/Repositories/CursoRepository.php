@@ -23,4 +23,17 @@ class CursoRepository {
     {
         return $this->model->with('instrutor')->get();
     }
+
+    public function criacurso(array $dados)
+    {
+        return $this->model->create($dados);
+
+    }
+
+    public function editacurso($id, array $dados)
+    {
+    
+        return $this->model->where('id', $id)->update($dados);
+
+    }
 }
