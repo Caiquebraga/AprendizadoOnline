@@ -1,0 +1,59 @@
+[33mcommit 87ed91878dd908c92e2b0c28876480451e15d8e7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/repositories[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mrepositories[m[33m)[m
+Author: Caiquebraga <caiquebsousa@outlook.com>
+Date:   Wed Nov 22 05:17:21 2023 -0300
+
+    [refs: 0.13 - feat - trabalhando no repositorie user]
+
+[33mcommit d017003f600daccb4c7b42b492132eb6e8039227[m[33m ([m[1;31morigin/provaiders[m[33m, [m[1;32mprovaiders[m[33m)[m
+Author: Caiquebraga <caiquebsousa@outlook.com>
+Date:   Wed Nov 22 04:37:29 2023 -0300
+
+    [refs: 0.12 - fix - alterando trecho de cod que trabalha com php 8.0]
+
+[33mcommit 01f5e19f255bc5a39a0d7c1215d635d1b3d3abb3[m[33m ([m[1;31morigin/trabalhando_com_models[m[33m, [m[1;32mtrabalhando_com_models[m[33m, [m[1;32mmain[m[33m)[m
+Author: Caiquebraga <caiquebsousa@outlook.com>
+Date:   Tue Nov 21 05:32:16 2023 -0300
+
+    [Refs: 0.11 - FEAT - Trabalhando com as models]
+
+[33mcommit 3125f07c1618fb63551a3eee8a3f3d3fe0cc94ef[m[33m ([m[1;31morigin/feat_0.10_criacao_seeder_cursos[m[33m, [m[1;32mfeat_0.10_criacao_seeder_cursos[m[33m)[m
+Author: Caiquebraga <caiquebsousa@outlook.com>
+Date:   Tue Nov 21 04:54:49 2023 -0300
+
+    [criacao de seeder para cursos]
+
+[33mcommit df91910111f155ad49f44374cf8c11ecc356de04[m[33m ([m[1;31morigin/trabalhando-com-repository-cursos-006[m[33m)[m
+Author: Caiquebraga <caiquebsousa@outlook.com>
+Date:   Fri Oct 20 00:19:26 2023 -0300
+
+    [Feet-005-criando-primeiros-metodos-da-repository-curso]
+
+[33mcommit 32d0bc443b6b194a4be1de2fc1645e9c032d7ec5[m[33m ([m[1;31morigin/criacao-repositories-services-004[m[33m)[m
+Author: @CaiqueBraga <caiquebsousa@outlook.com>
+Date:   Thu Oct 19 16:51:57 2023 -0300
+
+    [REFS: cricao de ripositories e services]
+
+[33mcommit 1f96170d32ff2e6f51b0d9530d61b8cdf09f6390[m[33m ([m[1;31morigin/criacao-models-003[m[33m, [m[1;31morigin/criacao-de-003[m[33m, [m[1;31morigin/criacao-de-002[m[33m)[m
+Author: @CaiqueBraga <caiquebsousa@outlook.com>
+Date:   Tue Oct 17 17:25:15 2023 -0300
+
+    [refs: 002_newFeat_criacao_migrations
+
+[33mcommit 859c95546c98a5f0a7f8644ea914689711158733[m[33m ([m[1;31morigin/alteração-layout-pag-inicial[m[33m)[m
+Author: @CaiqueBraga <caiquebsousa@outlook.com>
+Date:   Mon Oct 9 09:14:23 2023 -0300
+
+    alteração-layout-pag-inicial
+
+[33mcommit 7748cbf6d426d1d45e84f81946163d0d479a37d4[m
+Author: @CaiqueBraga <caiquebsousa@outlook.com>
+Date:   Fri Oct 6 10:49:39 2023 -0300
+
+    estilização pagina inicial
+
+[33mcommit 6f03611332d702cce9196b80d19a182ab68b01d8[m
+Author: @CaiqueBraga <caiquebsousa@outlook.com>
+Date:   Fri Oct 6 09:06:35 2023 -0300
+
+    Primeiro commit no branch master
