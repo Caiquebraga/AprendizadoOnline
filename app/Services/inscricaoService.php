@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\InscricaoUserRepository;
+use Illuminate\Support\Facades\Validator;
 
 class InscricaoService
 {

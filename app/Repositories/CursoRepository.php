@@ -36,4 +36,9 @@ class CursoRepository {
         return $this->model->where('id', $id)->update($dados);
 
     }
+
+    public function cursoJaExiste($nome)
+    {
+    return $this->model->where('nome', $nome)->exists();
+    }
 }
