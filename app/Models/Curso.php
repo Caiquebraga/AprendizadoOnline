@@ -17,6 +17,6 @@ class Curso extends Model
 
     public function instrutor()
     {
-        return $this->belongsTo(Instrutores::class);
+        return $this->belongsTo(Instrutor::class, 'instrutor_id');
     }
 }

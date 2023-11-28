@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Licao extends Model
+class perfil extends Model
 {
     protected $fillable = [
-       'titulo',
-       'conteudo',
-       'type'
+        'user_id',
+        'tipo',
     ];
 
-    public function curso()
+    public function user()
     {
-        return $this->belongsTo(Curso::class);
+        return $this->belongsTo(User::class);
     }
 }
