@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('curso_id');
-            $table->date('dada_inscricao');
+            $table->date('data_inscricao');
             $table->string('status', 20)->default('pendente');
             $table->timestamps();
-
+        
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('curso_id')->references('id')->on('cursos');
         });

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('type', 20)->nullable();
             $table->timestamps();
 
-            $table->foreign('curso_id')->references('id')->on('cursos');
+            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');;
         });
     }
 
