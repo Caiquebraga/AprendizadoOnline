@@ -6,40 +6,48 @@ use App\Models\User;
 
 class UserRepository
 {
+    protected $userModel;
+
+    public function __construct(User $userModel)
+    {
+        $this->userModel = $userModel;
+    }
 
     public function getUser()
     {
-        return User::all();
+        return $this->userModel->all();
     }
 
     public function createUser(array $userData)
     {
-        return User::create($userData);
+        return $this->userModel->create($userData);
     }
 
-    public function updateUser(User $user, array $userData)
+    public function updateUser(array $userData)
     {
+        $user = $this->userModel->find($userData['id']);
+        
         $user->update($userData);
         return $user;
     }
 
-    public function deleteUser(User $user)
+    public function deleteUser()
     {
-        $user->delete();
+        $this->userModel->delete();
     }
 
     public function getPaginateUsers($perPage = 10)
     {
-        return User::paginate($perPage);
+        return $this->userModel->paginate($perPage);
     }
 
     public function getUserByEmail($email)
     {
-        return User::where('email', $email)->first();
+        return $this->userModel->where('email', $email)->first();
     }
 
     public function getUserWithInstrutor($userId)
     {
-        return User::with('instrutor')->find($userId);
+        return $this->userModel->with('instrutor')->find($userId);
     }
 }
