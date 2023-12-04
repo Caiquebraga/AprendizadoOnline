@@ -4,6 +4,7 @@
 namespace App\Repositories;
 
 use App\Models\Curso;
+use App\Models\Instrutor;
 
 class CursoRepository {
 
