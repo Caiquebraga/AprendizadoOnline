@@ -9,7 +9,9 @@ class InstrutorService {
 
 protected $instrutorRepository;
 
-public function __construct(InstrutorRepository $instrutorRepository) {
+public function __construct(InstrutorRepository $instrutorRepository)
+
+    {
     $this->InstrutorRepository = $InstrutorRepository;
     }
 
