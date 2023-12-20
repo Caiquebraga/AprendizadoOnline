@@ -38,6 +38,11 @@ class LicaoRepository
         $this->licaoModel->delete();
     }
 
-    
+    public function paginateLicao()
+    {
+        return $this->licaoModel->paginate(10);
+    }
+
+
 
 }

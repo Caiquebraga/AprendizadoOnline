@@ -36,9 +36,9 @@ class UserRepository
         $this->userModel->delete();
     }
 
-    public function getPaginateUsers($perPage = 10)
+    public function getPaginateUsers()
     {
-        return $this->userModel->paginate($perPage);
+        return $this->userModel->paginate(15);
     }
 
     public function getUserByEmail($email)
