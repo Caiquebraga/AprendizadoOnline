@@ -2,36 +2,34 @@
 
 namespace App\Repositories;
 
-use App\Models\User;
 use App\Models\Inscricao;
 
 class InscricaoUserRepository
 {
-    public function criarInscricao(array $dados)
+    protected $inscricao;
+
+    public function __construct(Inscricao $inscricaoModel)
     {
-
-        return inscricao::create($dados);
-
+        $this->inscricao = $inscricaoModel;       
     }
-
-    public function atualizaInscricao(Inscricao $inscricao, array $dados)
-    {
-        $inscricao->update($dados);
-        return $inscricao;
-    }
-
-    public function excluirInscricao(Inscricao $inscricao)
-
-    {
-
-        $inscricao->delete();
-    }
-
 
     public function obterInscricaoPorId($id)
     {
-        return Inscricao::find($id);
+        return $this->inscricao->find($id);
     }
-    
 
+    public function criarInscricao(array $dados)
+    {
+        return $this->inscricao->create($dados);
+    }
+
+    public function atualizarInscricao($id, array $dados)
+    {
+        return $this->inscricao->update($dados);
+    }
+
+    public function excluirInscricao($id)
+    {
+        return $this->inscricao->delete($id);
+    }
 }

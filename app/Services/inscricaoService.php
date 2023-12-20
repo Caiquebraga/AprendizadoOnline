@@ -17,11 +17,12 @@ class InscricaoService
 
     public function criarInscricao(array $dados) 
     {
-        $validacao = validarDados($dados);
+        $validacao = $this->validaDados($dados);
 
-        if($validacao->fails()){
+        if ($validacao->fails()) {
             throw new \InvalidArgumentException('Os dados fornecidos são inválidos: ' . $validacao->errors()->first());
         }
+
         $inscricao = $this->inscricaoRepository->criarInscricao($dados); 
     }
 
@@ -29,9 +30,11 @@ class InscricaoService
     {
         $regras = [
             'nome' => 'required|string|max:255',
-            'email' => 'required|email|unique:inscricoes|email',
+            'email' => 'required|email|unique:inscricoes,email',
             'nome_curso' => 'required|string|max:255',
         ];
+
+        return Validator::make($dados, $regras);
     }
 
     public function atualizarInscricao($inscricaoId, array $dados) 
@@ -45,31 +48,29 @@ class InscricaoService
         }
     }
 
-    public function obterInscricaoporId($id)
+    public function obterInscricaoPorId($id)
     {
-        $inscricao = $this->inscricaoRepository->obterInscricaoporId($id);
+        $inscricao = $this->inscricaoRepository->obterInscricaoPorId($id);
 
-        if(!$inscricao)
-        {
-            throw new \exception('Inscrição não encontrada!');
+        if (!$inscricao) {
+            throw new \Exception('Inscrição não encontrada!');
         }
 
         return $inscricao;
     }
 
-    public function excluirInscricao(Inscricao $inscricao)
+    public function excluirInscricao($inscricaoId)
     {
-        if(!$this->usuarioTemPermissao())
-        {
+        if (!$this->usuarioTemPermissao()) {
             throw new \Exception('Você não tem permissão para excluir esta inscrição.');
         }
 
-        $this->inscricaoRepository->excluirInscricao($inscricao);
+        $this->inscricaoRepository->excluirInscricao($inscricaoId);
     }
 
     public function usuarioTemPermissao()
     {
-        $userAutenticado = auth::user();
+        $usuarioAutenticado = Auth::user();
 
         return $usuarioAutenticado && $usuarioAutenticado->perfil && $usuarioAutenticado->perfil->tipo === 'admin';
     }
