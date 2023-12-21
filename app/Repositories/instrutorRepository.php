@@ -24,6 +24,11 @@ class instrutorRepository {
         return $this->model->with('user')->get();
     }
 
+    public function buscarInstrutoresPorNome($nome)
+    {
+        return $this->model->with('user')->where('nome', 'LIKE', "%$nome%")->get();
+    }
+
     public function criarinstrutor(array $dados)
     {
         return $this->model->create($dados);
@@ -38,6 +43,8 @@ class instrutorRepository {
     {
         return $this->model->where('id', $id)->delete();
     }
+
+
 
 
 
