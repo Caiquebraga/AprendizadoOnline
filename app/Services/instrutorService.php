@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Repositories\InstrutorRepository;
 use Illuminate\Support\Facades\Validator;
+use App\Utilities\Cache;
+
 
 class InstrutorService {
 
@@ -44,12 +46,32 @@ public function __construct(InstrutorRepository $instrutorRepository)
             return $instrutores;
         }
     }
-    
-        public function listaInstrutor()
-        {
-           $instrutores = $this->instrutorRepository->listainstrutor();    
+
+    public function listainstrutor($usarCache = true)
+{
+    if ($usarCache) {
+        
+        $instrutoresCache = $this->cache->get('instrutores_cache');
+        if ($instrutoresCache !== null && !$this->cache->chaveExpirou('instrutores_cache')) {
+            return $instrutoresCache;
         }
-    
+    }
+
+    try {
+        
+        $instrutores = $this->instrutorRepository->listainstrutor();
+        
+        
+        $this->cache->put('instrutores_cache', $instrutores, 60);
+
+        return $instrutores;
+    } catch (Exception $excecao) {
+       
+        return [];
+    }
+}
+
+
 
    
 
