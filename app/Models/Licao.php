@@ -10,7 +10,8 @@ class Licao extends Model
     protected $fillable = [
        'titulo',
        'conteudo',
-       'type'
+       'type',
+       'curso_id'
     ];
 
     public function curso()
