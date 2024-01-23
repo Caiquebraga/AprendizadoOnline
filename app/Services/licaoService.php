@@ -45,4 +45,21 @@ class LicaoService {
 
         }
 
+        public function updateLicao(array $licaoArray)
+        {
+
+            if (empty($licaoArray['titulo'])) {
+                throw new InvalidArgumentException("O título da lição não pode estar vazio.");
+            }
+
+            if (empty($licaoArray['conteudo'])){
+                throw new InvalidArgumentException("O conteudo da lição não pode esta vazio.");
+            }
+
+            $licaoatualiza = $this->licaoRepository->updateLicao($licaoArray);
+
+            return $licaoatualiza;
+        }
+
+
 }

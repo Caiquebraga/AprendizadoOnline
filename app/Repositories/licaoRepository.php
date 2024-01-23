@@ -10,7 +10,7 @@ class LicaoRepository
 
     public function __construct(Licao $licaoModel)
     {
-        $this->licaoModel=$licaoModel;
+        $this->licaoModel = $licaoModel;
     }
 
 
