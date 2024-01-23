@@ -61,5 +61,18 @@ class LicaoService {
             return $licaoatualiza;
         }
 
+        public function deleteLicao($licaoId)
+        {
+            $licaoExistente = $this->licaoRepository->licaoById($licaoId);
+
+            if (!$licaoExistente) {
+            throw new NotFoundException("A lição não foi encontrada.");
+                }
+
+            if (!$this->verificarEstadoParaExclusao($licaoExistente)) {
+            throw new LogicException("A lição não pode ser excluída devido ao seu estado atual.");
+                }
+        }
+
 
 }

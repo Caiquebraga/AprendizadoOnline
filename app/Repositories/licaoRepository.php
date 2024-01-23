@@ -19,6 +19,11 @@ class LicaoRepository
        return $this->licaoModel->all();
     }
 
+    public function licaoById($licaoId)
+    {
+          return $this->licaoModel::find($licaoId);
+    }
+
     public function createLicao(array $licaodata)
     {
 
