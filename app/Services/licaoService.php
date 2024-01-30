@@ -74,5 +74,10 @@ class LicaoService {
                 }
         }
 
+        public function ListLicao()
+        {
+            return $this->licaoRepository->PaginateLicao();
+        }
+
 
 }
