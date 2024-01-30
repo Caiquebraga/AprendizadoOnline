@@ -37,7 +37,7 @@ class CursoService {
         return $inscricao;
     }
 
-    public function buscarInscricao($id)
+    public function buscarCurso($id)
     {
         
          $validator = Validator::make(['id' => $id], [
