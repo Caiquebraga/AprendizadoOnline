@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Validator;
 
 class CursoService {
 
-    protected $cursoRepository;
+    protected $CursoRepository;
 
-    public function __construct(CursoRepository $cursoRepository)
+    public function __construct(CursoRepository $CursoRepository)
     {
-        $this->CursoRepository = $cursoRepository;
+        $this->CursoRepository = $CursoRepository;
     }
 
     public function criarCurso(array $dados )
@@ -34,7 +34,7 @@ class CursoService {
 
         $inscricao = $this->CursoRepository->criacurso($dados);
 
-        return $cursoCriado;
+        return $inscricao;
     }
 
     public function buscarInscricao($id)
@@ -49,7 +49,7 @@ class CursoService {
             throw new \InvalidArgumentException('ID inválido. Deve ser um número inteiro positivo.');
         }
 
-        return $this->cursoRepository->buscacurso($id);
+        return $this->CursoRepository->buscacurso($id);
     }
 
     public function editarCurso($id, array $dados)
@@ -64,14 +64,14 @@ class CursoService {
             throw new \InvalidArgumentException('Dados inválidos: ' . $validator->errors()->first());
         }
 
-        $cursoExistente = $this->CursoRepositry->buscacurso($id);
+        $cursoExistente = $this->CursoRepository->buscacurso($id);
 
         if (!$cursoExistente) {
             throw new \RuntimeException('Curso não encontrado.');
         }
 
-        $this->cursoRepository->editacurso($id, $dados);
+        $this->CursoRepository->editacurso($id, $dados);
 
-        return $this->cursoRepository->buscacurso($id);
+        return $this->CursoRepository->buscacurso($id);
     }
 }
