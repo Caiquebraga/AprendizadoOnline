@@ -14,7 +14,7 @@ protected $instrutorRepository;
 public function __construct(InstrutorRepository $instrutorRepository)
 
     {
-    $this->InstrutorRepository = $InstrutorRepository;
+    $this->instrutorRepository = $instrutorRepository;
     }
 
     public function buscarInstrutor($id = null, $nome = null)
